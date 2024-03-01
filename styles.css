@@ -332,18 +332,6 @@ svg {
     font-weight: var(--fw-medium);
   }
 
-  /* .prompt-table tr {
-      display: flex;
-      align-items: flex-start;
-  }
-
-  .prompt-table tr td {
-      display: flex;
-      align-items: flex-start;
-      flex: 1 0 0;
-      align-self: stretch;
-  } */
-
   .col1 {
     background: var(--color-blue-100);
     color: var(--color-cream-100);
