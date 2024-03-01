@@ -197,12 +197,6 @@ svg {
     color: var(--color-black-100);
   }
 
-  .generated-sentence p {
-    font-size: var(--fs-600);
-    font-weight: var(--fw-regular);
-    color: var(--color-black-50);
-  }
-
   /* Buttons */
 
 .button {
@@ -376,26 +370,32 @@ svg {
     font-weight: var(--fw-medium);
   }
 
-  .generated-sentence {
+  #generatedSentenceWrapper {
     display: flex;
   }
 
-  .generated-sentence .part1 {
+  .generatedSentence {
+    font-size: var(--fs-600);
+    font-weight: var(--fw-regular);
+    color: var(--color-black-50);
+  }
+
+  .genWord1 {
     font-weight: var(--fw-bold);
     color: var(--color-blue-100);
   }
 
-  .generated-sentence .part2 {
+  .genWord2 {
     font-weight: var(--fw-bold);
     color: var(--color-red-100);
   }
 
-  .generated-sentence .part3 {
+  .genWord3 {
     font-weight: var(--fw-bold);
     color: var(--color-yellow-100);
   }
 
-  .generated-sentence .part4 {
+  .genWord4 {
     font-weight: var(--fw-bold);
     color: var(--color-green-100);
   }

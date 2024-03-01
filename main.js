@@ -16,7 +16,7 @@ const selectValue = function(array) {
 }
 
 // Selecting element in DOM
-const generatedSentenceWrapper = document.querySelector('.generatedSentenceWrapper');
+const generatedSentenceWrapper = document.querySelector('#generatedSentenceWrapper');
 
 // Sentence generator
 
@@ -26,7 +26,16 @@ const generateSentence = function () {
   let third = selectValue(part3);
   let fourth = selectValue(part4);
 
-  generatedSentenceWrapper.innerHTML = "<p>This year, I want to " + first + " " + second + " " + third + " " + fourth + "."</p>;
+  generatedSentenceWrapper.innerHTML =
+    '<p class="generatedSentence">This year, I want to <span class="genWord1">' +
+    first +
+    '</span> <span class="genWord2">' +
+    second +
+    '</span> <span class="genWord3">' +
+    third +
+    '</span> <span class="genWord4">' +
+    fourth +
+    "</span>.</p>";
 };
 
 // Buttons
