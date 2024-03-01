@@ -15,8 +15,12 @@ const selectValue = function(array) {
     return array[i];
 }
 
-// Selecting element in DOM
+// Selecting elements in DOM
 const generatedSentenceWrapper = document.querySelector('#generatedSentenceWrapper');
+const generator = document.querySelector('#generator');
+const buttonNew = document.querySelector('#generateNew');
+const buttonAgain = document.querySelector('#generateAgain');
+const buttonRestart = document.querySelector('#startOver');
 
 // Sentence generator
 
@@ -38,9 +42,25 @@ const generateSentence = function () {
     "</span>.</p>";
 };
 
+const generateNew = function() {
+  generateSentence();
+  generator.style.display = "flex";
+  buttonNew.style.display = "none";
+}
+
+const generateAgain = function() {
+  generateSentence();
+}
+
+// Reset program
+
+const reset = function() {
+  generator.style.display = "none";
+  buttonNew.style.display = "block";
+}
+
 // Buttons
-
-const generateButton = document.querySelector("#generateNew");
-generateButton.addEventListener("click", generateSentence);
-
+buttonNew.addEventListener("click", generateNew);
+buttonAgain.addEventListener("click", generateAgain);
+buttonRestart.addEventListener("click", reset);
 
