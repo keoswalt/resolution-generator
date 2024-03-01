@@ -15,30 +15,52 @@ const selectValue = function(array) {
     return array[i];
 }
 
-// Selecting empty spaces in DOM
-const space1 = document.querySelector('.part1');
-const space2 = document.querySelector('.part2');
-const space3 = document.querySelector('.part3');
-const space4 = document.querySelector('.part4');
+// Selecting elements in DOM
+const generatedSentenceWrapper = document.querySelector('#generatedSentenceWrapper');
+const generator = document.querySelector('#generator');
+const buttonNew = document.querySelector('#generateNew');
+const buttonAgain = document.querySelector('#generateAgain');
+const buttonRestart = document.querySelector('#startOver');
 
+// Sentence generator
 
 const generateSentence = function () {
   let first = selectValue(part1);
   let second = selectValue(part2);
   let third = selectValue(part3);
   let fourth = selectValue(part4);
-  space1.textContent = first;
-  space2.textContent = second;
-  space3.textContent = third;
-  space4.textContent = fourth;
+
+  generatedSentenceWrapper.innerHTML =
+    '<p class="generatedSentence">This year, I want to <span class="genWord1">' +
+    first +
+    '</span> <span class="genWord2">' +
+    second +
+    '</span> <span class="genWord3">' +
+    third +
+    '</span> <span class="genWord4">' +
+    fourth +
+    "</span>.</p>";
 };
 
-const generateButton = document.querySelector("#generateNew");
-generateButton.addEventListener("click", generateSentence);
+const generateNew = function() {
+  generateSentence();
+  generator.style.display = "flex";
+  buttonNew.style.display = "none";
+}
 
-// console.log(generateSentence());
+const generateAgain = function() {
+  generateSentence();
+}
 
-// return "This year, I want to " + first + " " + second + " " + third + " " + fourth + ".";
+// Reset program
 
+const reset = function() {
+  generator.style.display = "none";
+  buttonNew.style.display = "block";
+}
 
+// Buttons
+buttonNew.addEventListener("click", generateNew);
+buttonAgain.addEventListener("click", generateAgain);
+buttonRestart.addEventListener("click", reset);
 
